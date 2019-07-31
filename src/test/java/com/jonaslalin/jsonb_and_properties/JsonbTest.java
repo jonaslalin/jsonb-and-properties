@@ -20,7 +20,7 @@ public class JsonbTest {
         final User user = jsonb.fromJson(json, User.class);
 
         assertEquals("Donald", user.getFirstName());
-        assertEquals(null, user.getMiddleInitial());
+        assertEquals("DEFAULT", user.getMiddleInitial());
         assertEquals("Duck", user.getLastName());
     }
 
@@ -36,11 +36,11 @@ public class JsonbTest {
 
     @Test
     public void shouldDeserializeWithExcessiveProperties() {
-        final String json = "{\"first_name\":\"Donald\",\"middle_initial\":\"F\",\"last_name\":\"Duck\",\"gender\":\"Male\"}";
+        final String json = "{\"first_name\":\"Donald\",\"middle_initial\":null,\"last_name\":\"Duck\",\"gender\":\"Male\"}";
         final User user = jsonb.fromJson(json, User.class);
 
         assertEquals("Donald", user.getFirstName());
-        assertEquals("F", user.getMiddleInitial());
+        assertEquals(null, user.getMiddleInitial());
         assertEquals("Duck", user.getLastName());
     }
 }

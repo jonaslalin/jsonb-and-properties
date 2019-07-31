@@ -2,7 +2,7 @@ package com.jonaslalin.jsonb_and_properties;
 
 public class User {
     private String firstName;
-    private String middleInitial;
+    private String middleInitial = "DEFAULT";
     private String lastName;
 
     public String getFirstName() {
