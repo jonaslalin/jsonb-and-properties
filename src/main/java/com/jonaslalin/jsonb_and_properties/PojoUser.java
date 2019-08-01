@@ -5,8 +5,7 @@ public class PojoUser {
     private String middleInitial = "DEFAULT";
     private String lastName;
 
-    public PojoUser() {
-    }
+    public PojoUser() {}
 
     public String getFirstName() {
         return firstName;
